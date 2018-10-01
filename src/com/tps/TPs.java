@@ -6,6 +6,7 @@
 package com.tps;
 
 import com.tps.tp1.TP1;
+import com.tps.tp2.TP2;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class TPs {
     public static void main(String[] args) throws IOException {
         int input;
         do {
-            System.out.print("Quel TP (1-1) voulez vous exécuter ? (0 pour quitter) ");
+            System.out.print("Quel TP (1-2) voulez vous exécuter ? (0 pour quitter) ");
             Scanner in = new Scanner(System.in);
             try {
                 input = Integer.parseInt(in.next());
@@ -32,8 +33,12 @@ public class TPs {
             }
             switch (input) {
                 case 1:
-                    System.out.println("=============================TP1=============================");
+                    System.out.println("============================= TP1 =============================");
                     TP1.run();
+                    break;
+                case 2:
+                    System.out.println("============================= TP2 =============================");
+                    TP2.run();
                     break;
                 case 0:
                     System.out.println("Au revoir!");
