@@ -11,8 +11,8 @@ package com.tps.tp2;
  */
 public class Heap {
     
-    int[] array;
-    int elementsNumber;
+    private final int[] array;
+    private int elementsNumber;
     
     Heap(int size) {
         elementsNumber = 0;
