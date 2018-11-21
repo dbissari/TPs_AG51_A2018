@@ -22,7 +22,6 @@ public class TP3 {
         Chrono hashTableChrono = new Chrono();
         Random r = new Random();
         
-        System.out.println("Temps moyens d'insertion, de recherche et de suppression en nanosecondes");
         System.out.format("%15s%15s%15s%15s%15s\n", "Type", "Taille", "Insertion", "Recherche", "Suppression");
         
         for(int i = 10; i <= MAX; i*=10) {
@@ -63,15 +62,15 @@ public class TP3 {
                 
             }
             
-            System.out.format("%15s%15d%15d%15d%15d\n", "Tableau", i, 
-                    arrayChrono.getInsertTime()/SAMPLES, 
-                    arrayChrono.getSearchTime()/SAMPLES, 
-                    arrayChrono.getDeleteTime()/SAMPLES);
+            System.out.format("%15s%15d%15g%15g%15g\n", "Tableau", i, 
+                    arrayChrono.getInsertTime()/(SAMPLES*1000000000.0), 
+                    arrayChrono.getSearchTime()/(SAMPLES*1000000000.0), 
+                    arrayChrono.getDeleteTime()/(SAMPLES*1000000000.0));
             
-            System.out.format("%15s%15d%15d%15d%15d\n", "Hachage", i, 
-                    hashTableChrono.getInsertTime()/SAMPLES, 
-                    hashTableChrono.getSearchTime()/SAMPLES, 
-                    hashTableChrono.getDeleteTime()/SAMPLES);
+            System.out.format("%15s%15d%15g%15g%15g\n", "Hachage", i, 
+                    hashTableChrono.getInsertTime()/(SAMPLES*1000000000.0), 
+                    hashTableChrono.getSearchTime()/(SAMPLES*1000000000.0), 
+                    hashTableChrono.getDeleteTime()/(SAMPLES*1000000000.0));
         }
         
     }
