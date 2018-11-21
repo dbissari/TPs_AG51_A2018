@@ -8,6 +8,7 @@ package com.tps;
 import com.tps.tp1.TP1;
 import com.tps.tp2.TP2;
 import com.tps.tp3.TP3;
+import com.tps.tp4.TP4;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class TPs {
     public static void main(String[] args) throws IOException {
         int input;
         do {
-            System.out.print("Quel TP (1-3) voulez vous exécuter ? (0 pour quitter) ");
+            System.out.print("Quel TP (1-4) voulez vous exécuter ? (0 pour quitter) ");
             Scanner in = new Scanner(System.in);
             try {
                 input = Integer.parseInt(in.next());
@@ -44,6 +45,10 @@ public class TPs {
                 case 3:
                     System.out.println("============================= TP3 =============================");
                     TP3.run();
+                    break;
+                case 4:
+                    System.out.println("============================= TP4 =============================");
+                    TP4.run();
                     break;
                 case 0:
                     System.out.println("Au revoir!");
