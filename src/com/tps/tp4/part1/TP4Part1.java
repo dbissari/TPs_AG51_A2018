@@ -5,20 +5,19 @@
  */
 package com.tps.tp4.part1;
 
-import java.util.Random;
-
 /**
  *
  * @author bright
  */
 public class TP4Part1 {
     
-    public static final int MAX=500;
-    public static final int SAMPLES=20;
-    public static final double NB_EDGES=0.5;
+    private static final int MAX=1000;
+    private static final int SAMPLES=20;
+    private static final double NB_EDGES=0.5;
     
     public static void run () {
-        System.out.format("%15s%15s%15s%15s%15s\n", "Taille", "BFS", "DFS", "MST", "Djikstra");
+        //System.out.format("%15s%15s%15s%15s%15s\n", "Taille", "BFS", "DFS", "MST", "Djikstra");
+        System.out.format("%15s%15s%15s\n", "Taille", "BFS", "DFS");
         for(int i = 100; i <= MAX; i+=100) {
             Chrono chrono = new Chrono();
             long start;
@@ -36,6 +35,7 @@ public class TP4Part1 {
                 graph.dfs();
                 chrono.addDfsTime(System.nanoTime() - start);
                 
+                /*
                 // MST
                 start = System.nanoTime();
                 graph.mst();
@@ -45,13 +45,19 @@ public class TP4Part1 {
                 start = System.nanoTime();
                 graph.djikstra();
                 chrono.addDjikstraTime(System.nanoTime() - start);
+                */
             }
 
+            System.out.format("%15d%15g%15g\n", i, 
+                    chrono.getBfsTime()/(SAMPLES*1000000000.0), 
+                    chrono.getDfsTime()/(SAMPLES*1000000000.0));
+            /*
             System.out.format("%15d%15g%15g%15g%15g\n", i, 
                     chrono.getBfsTime()/(SAMPLES*1000000000.0), 
                     chrono.getDfsTime()/(SAMPLES*1000000000.0), 
                     chrono.getMstTime()/(SAMPLES*1000000000.0), 
                     chrono.getDjikstraTime()/(SAMPLES*1000000000.0));
+            */
         }
     }
 }

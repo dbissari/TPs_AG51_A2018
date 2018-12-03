@@ -14,7 +14,7 @@ import java.util.concurrent.ArrayBlockingQueue;
  *
  * @author bright
  */
-public class Graph {
+class Graph {
     static private final int ROOT = 0;
     /* Adjacency matrix. If an element is different from 0, then we have a
      * link between these two nodes. The value is the weight of the edge */
@@ -23,14 +23,14 @@ public class Graph {
     private final int size;
     private int nbEdges;
 
-    public Graph(int M) {
+    Graph(int M) {
         this.size = M;
         this.nbEdges = 0;
         this.adjacency = new int[M][M];
         this.visited = new ArrayList();
     }
 
-    public Graph(int M, double probability) {
+    Graph(int M, double probability) {
         this.size = M;
         this.nbEdges = 0;
         this.adjacency = new int[M][M];
@@ -64,6 +64,7 @@ public class Graph {
         }
     }
 
+    /*
     public void setEdges(int[]... edges) {
         for(int[] edge: edges) {
             if(edge[2] >= 100 || edge[2] < 0)
@@ -74,8 +75,9 @@ public class Graph {
             this.nbEdges += 2;
         }
     }
+    */
 
-    public ArrayList<Integer> getNeighbours(int node) {
+    ArrayList<Integer> getNeighbours(int node) {
         ArrayList<Integer> ngbh = new ArrayList<>();
         for(int i = 0; i < this.size; ++i)
             if(this.adjacency[node][i] != 0)
@@ -88,7 +90,7 @@ public class Graph {
      * While we have something in queue, every child node is queued,
      * while a node is polled. This way, we ensure to always go to
      * "brothers" first, and then to childnodes */
-    public void bfs() {
+    void bfs() {
         this.visited = new ArrayList<>();
         ArrayBlockingQueue queue = new ArrayBlockingQueue(this.nbEdges);
         queue.add(Graph.ROOT);
@@ -105,7 +107,7 @@ public class Graph {
      * While we have something in stack, every child node is pushed,
      * while a node is poped. This way, we ensure to always go to
      * childnodes first, and then to "brothers" */
-    public void dfs() {
+    void dfs() {
         this.visited = new ArrayList<>();
         Stack stack = new Stack();
         stack.push(Graph.ROOT);
@@ -121,6 +123,7 @@ public class Graph {
     /* Returns a list of every nodes linked to the given node
      * returned lists are [weight, linked node, given node]
      */
+    /*
     public ArrayList<ArrayList<Integer>> getEdges(int node) {
         ArrayList<ArrayList<Integer>> ngbh = new ArrayList<>();
         for(int i = 0; i < this.size; ++i) {
@@ -135,8 +138,10 @@ public class Graph {
         
         return ngbh;
     }
+    */
 
     /* Get the lowest weighted neighbour for a given node */
+    /*
     public ArrayList<Integer> getLowestEdge(int node) {
         ArrayList<Integer> lowest = new ArrayList<>();
         lowest.add(100);
@@ -149,11 +154,13 @@ public class Graph {
         
         return lowest;
     }
+    */
 
     /* We here sort the edges by priority and return a list of couples
      * (priority, node associated). A more efficient sort would probably
      * be much better on dense graphs, but we here process very small
      * (probably <10) amount of data, so selection sort fits well. */
+    /*
     public void sortEdges(ArrayList<ArrayList<Integer>> toSort) {
         for(int i = 0; i < toSort.size(); ++i) {
             int min = i;
@@ -166,21 +173,22 @@ public class Graph {
                 toSort.set(min, swap);
             }
         }
-    }
+    }*/
 
     /* Implements a minimum spanning tree algorithm. We are using a greedy
      * algorithm, the Prim's algorithm. For uniqueness reason with others
      * algorithms, we use a adjacency matrix (complexity O(n^2), n being the
      * number of vertices, but a binary heap or a Fibonacci heap used with
      * an adjacency list would drop the complexity to a logarithmic one. */
+    /*
     public ArrayList mst() {
         ArrayList<ArrayList<Integer>> edges = new ArrayList<>();
         ArrayList<Integer> vertices = new ArrayList<>();
 
-        /* We add the starting node */
+        // We add the starting node
         vertices.add(Graph.ROOT);
 
-        /* While all the vertices aren't linked by the tree */
+        // While all the vertices aren't linked by the tree
         while(vertices.size() < this.size) {
             int i;
             ArrayList<ArrayList<Integer>> availEdges = new ArrayList<>();
@@ -201,18 +209,20 @@ public class Graph {
 
         return edges;
     }
+    */
 
+    /*
     public ArrayList<Integer> djikstra() {
         this.visited = new ArrayList<>();
         ArrayList<Integer> dist = new ArrayList<>();
 
-        /* Initialize the arrays */
+        // Initialize the arrays
         for(int i = 0; i < this.size; ++i)
             dist.add(Integer.MAX_VALUE);
 
-        /* The distance from the source to itself is nil */
+        // The distance from the source to itself is nil
         dist.set(Graph.ROOT, 0);
-        //visit all edges before exit
+        // visit all edges before exit
         while(this.visited.size() < this.size) {
             ArrayList<ArrayList<Integer>> availEdges;
             int toExplore = -1;
@@ -234,4 +244,5 @@ public class Graph {
         
         return dist;
     }
+    */
 }
