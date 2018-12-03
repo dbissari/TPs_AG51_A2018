@@ -9,7 +9,7 @@ package com.tps.tp3;
  *
  * @author bright
  */
-public class Element {
+class Element {
     
     private final int value;
     private Element next;

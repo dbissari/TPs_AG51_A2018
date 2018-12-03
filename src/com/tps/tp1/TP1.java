@@ -174,7 +174,7 @@ public class TP1 {
     
     
     
-    public static void quickSort (int[] tab, int startIndex, int endIndex) {
+    private static void quickSort (int[] tab, int startIndex, int endIndex) {
         if (startIndex < endIndex) {
             int pivotIndex = partition(tab, startIndex, endIndex);
             quickSort(tab, startIndex, pivotIndex-1);
@@ -182,7 +182,7 @@ public class TP1 {
         }
     }
 
-    public static int partition (int[] t, int startIndex, int endIndex) {
+    private static int partition (int[] t, int startIndex, int endIndex) {
         int valeurPivot = t[startIndex];
         int d = startIndex + 1;
         int f = endIndex;
@@ -201,7 +201,7 @@ public class TP1 {
     
     
     
-    public static void shellSort (int[] tab,int size) {
+    private static void shellSort (int[] tab,int size) {
         int step = 1;
         while(step < size/9) {
            step = step * 3 + 1;
@@ -228,7 +228,7 @@ public class TP1 {
     
     
     
-    public static void mergeSort (int[] tab, int start, int end) {
+    private static void mergeSort (int[] tab, int start, int end) {
         int middle;
         if(start < end) {
             middle = (start+end) / 2;
@@ -238,7 +238,7 @@ public class TP1 {
         }
     }
 
-    public static void merge (int tab[], int start, int middle, int end)
+    private static void merge (int tab[], int start, int middle, int end)
     {
         int [] old_tab = (int[]) tab.clone(); 
         // tab.clone est tres gourmand en temps d'execution surtout dans un algo recursif

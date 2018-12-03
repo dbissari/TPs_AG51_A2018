@@ -9,32 +9,32 @@ package com.tps.tp3;
  *
  * @author bright
  */
-public class Chrono {
+class Chrono {
     private long insertTime = 0;
     private long searchTime = 0;
     private long deleteTime = 0;
     
-    public void addInsertTime(long time) {
+    void addInsertTime(long time) {
         this.insertTime += time;
     }
     
-    public void addSearchTime(long time) {
+    void addSearchTime(long time) {
         this.searchTime += time;
     }
     
-    public void addDeleteTime(long time) {
+    void addDeleteTime(long time) {
         this.deleteTime += time;
     }
 
-    public long getInsertTime() {
+    long getInsertTime() {
         return insertTime;
     }
 
-    public long getSearchTime() {
+    long getSearchTime() {
         return searchTime;
     }
 
-    public long getDeleteTime() {
+    long getDeleteTime() {
         return deleteTime;
     }
 }

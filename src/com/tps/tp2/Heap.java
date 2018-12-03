@@ -9,7 +9,7 @@ package com.tps.tp2;
  *
  * @author bright
  */
-public class Heap {
+class Heap {
     
     private final int[] array;
     private int elementsNumber;

@@ -9,7 +9,7 @@ package com.tps.tp3;
  *
  * @author bright
  */
-public class ElementsTable {
+class ElementsTable {
     
     private final Element table[];
 

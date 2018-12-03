@@ -9,7 +9,7 @@ package com.tps.tp3;
  *
  * @author bright
  */
-public class Array {
+class Array {
     
     private final int[] array;
     private int lastElementIndex;

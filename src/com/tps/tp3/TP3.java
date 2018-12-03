@@ -13,8 +13,8 @@ import java.util.Random;
  */
 public class TP3 {
     
-    public static final int MAX = 10000000;
-    public static final int SAMPLES = 1000;
+    private static final int MAX = 10000000;
+    private static final int SAMPLES = 1000;
     
     public static void run () {
     
