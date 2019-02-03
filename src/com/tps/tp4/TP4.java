@@ -6,6 +6,7 @@
 package com.tps.tp4;
 
 import com.tps.tp4.part1.TP4Part1;
+import com.tps.tp4.part2.TP4Part2;
 import java.util.Scanner;
 
 /**
@@ -31,7 +32,7 @@ public class TP4 {
                     break;
                 case 2:
                     System.out.println("========================= TP4 - Part2 =========================");
-                    
+                    TP4Part2.run();
                     break;
                 case 0:
                     break;
